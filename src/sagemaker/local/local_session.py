@@ -469,10 +469,13 @@ class LocalSagemakerRuntimeClient(object):
         if InferenceId is not None:
             headers["X-Amzn-SageMaker-Inference-Id"] = InferenceId
 
+        print("-I- request headers:", headers)
         # The http client encodes all strings using latin-1, which is not what we want.
         if isinstance(Body, str):
             Body = Body.encode("utf-8")
         r = self.http.request("POST", url, body=Body, preload_content=False, headers=headers)
+
+        print("-I- response status_code:", r.status)
 
         return {"Body": r, "ContentType": Accept}
 

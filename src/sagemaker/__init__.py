@@ -11,6 +11,7 @@
 # ANY KIND, either express or implied. See the License for the specific
 # language governing permissions and limitations under the License.
 """Placeholder docstring"""
+
 from __future__ import absolute_import
 
 import importlib_metadata
@@ -63,3 +64,5 @@ from sagemaker.automl.automl import AutoML, AutoMLJob, AutoMLInput  # noqa: F401
 from sagemaker.automl.candidate_estimator import CandidateEstimator, CandidateStep  # noqa: F401
 
 __version__ = importlib_metadata.version("sagemaker")
+
+print("-I- local_testing branch")
